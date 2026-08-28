@@ -2,9 +2,9 @@ name: Desktop release
 
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - "v*"
+
+# Release builds require publisher-owned avatar assets and signing material.
+# Keep them manual so a public tag cannot start an incomplete release build.
 
 permissions:
   contents: read
