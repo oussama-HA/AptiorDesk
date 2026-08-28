@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=AptiorDesk
+Comment=Privacy-first job-hunting assistant
+Exec=AptiorDesk
+Icon=aptiordesk
+Categories=Office;Utility;
+Terminal=false
+StartupWMClass=AptiorDesk

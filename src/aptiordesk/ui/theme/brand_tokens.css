@@ -1,0 +1,62 @@
+:root {
+  /* Exact colors sampled from the approved AptiorDesk logo artwork. */
+  --ad-brand-coral: #FF5757;
+  --ad-brand-black: #000000;
+  --ad-brand-white: #FFFFFF;
+  --ad-brand-gray: #727272;
+  --ad-brand-pink: #E2A59F;
+  --ad-brand-yellow: #F5C826;
+
+  /* Desktop design tokens. Companion apps may consume a published copy, but
+     their source is intentionally not part of this repository. */
+  --ad-canvas: #0C0C0D;
+  --ad-sidebar: #080809;
+  --ad-surface: #151516;
+  --ad-surface-raised: #1D1D1F;
+  --ad-surface-hover: #29292C;
+  --ad-border: #343438;
+  --ad-border-strong: #505057;
+  --ad-text: #FFFFFF;
+  --ad-text-muted: #C5C5CA;
+  --ad-text-faint: #929299;
+  --ad-accent: #FF5757;
+  --ad-accent-hover: #FF7474;
+  --ad-accent-pressed: #E84949;
+  --ad-accent-text: #000000;
+  --ad-accent-soft: #422123;
+  --ad-success: #78C997;
+  --ad-success-soft: #183126;
+  --ad-warning: #F5C826;
+  --ad-warning-soft: #3A3215;
+  --ad-danger: #FF7474;
+  --ad-danger-soft: #422123;
+  --ad-selection: #4A2527;
+  --ad-shadow-color: rgba(0, 0, 0, 160);
+
+  --ad-font-family: "Inter", "Segoe UI Variable Text", "Segoe UI", "SF Pro Text", Ubuntu, sans-serif;
+  --ad-font-display: 28pt;
+  --ad-font-title: 22pt;
+  --ad-font-heading: 13pt;
+  --ad-font-body: 10.5pt;
+  --ad-font-label: 9.25pt;
+  --ad-font-caption: 9pt;
+  --ad-font-metric: 24pt;
+  --ad-weight-medium: 600;
+  --ad-weight-bold: 700;
+
+  --ad-space-xs: 4px;
+  --ad-space-sm: 8px;
+  --ad-space-md: 12px;
+  --ad-space-lg: 16px;
+  --ad-space-xl: 24px;
+  --ad-space-2xl: 32px;
+  --ad-space-3xl: 44px;
+  --ad-radius-sm: 7px;
+  --ad-radius-md: 10px;
+  --ad-radius-lg: 12px;
+  --ad-radius-xl: 16px;
+  --ad-radius-pill: 999px;
+  --ad-control-height: 40px;
+  --ad-focus-width: 2px;
+  --ad-shadow-sm: 0 4px 14px rgba(0, 0, 0, .22);
+}

@@ -1,0 +1,125 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aptiordesk"
+version = "0.1.0.dev0"
+description = "Privacy-first, local-first job hunting assistant: resume tailoring, cover letters, and mock interview practice with local or bring-your-own-key AI."
+authors = [
+    { name = "Oussama Hamida", email = "hello@glidd.io" },
+]
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+keywords = ["job-search", "resume", "cover-letter", "interview", "local-first", "privacy", "llm", "ollama"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "PySide6>=6.8",
+    "pydantic>=2.9",
+    "httpx>=0.28",
+    "keyring>=25",
+    "platformdirs>=4.3",
+    "markdown-it-py>=3",
+    "pypdf>=5",
+    "pdfplumber>=0.11",
+    "python-docx>=1.1",
+    "kokoro-onnx>=0.5",
+    # Direct declarations keep the frozen voice runtime reproducible. Kokoro
+    # imports these dynamically and PyInstaller cannot infer them transitively.
+    "espeakng-loader>=0.2.4",
+    "phonemizer-fork>=3.3.2",
+    "language-tags>=1.2",
+    "onnxruntime>=1.20",
+    "numpy>=2",
+]
+
+[project.optional-dependencies]
+# Voice practice: microphone capture + local speech-to-text. Optional because
+# they pull large wheels; AptiorDesk runs fully without them (typed answers).
+voice = [
+    "sounddevice>=0.5",
+    "faster-whisper>=1.1",
+]
+dev = [
+    "build>=1.2",
+    "mypy>=1.13",
+    "pillow>=11",
+    "pyinstaller>=6.14",
+    "pytest>=8",
+    "pytest-qt>=4.4",
+    "respx>=0.22",
+    "ruff>=0.8",
+]
+
+[project.scripts]
+aptiordesk = "aptiordesk.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+aptiordesk = [
+    "assets/*.png",
+    "database/migrations/*.sql",
+    "ai/prompts/templates/*.md",
+    "features/interviews/avatar/*.qml",
+    "features/interviews/avatar/*.png",
+    "ui/theme/*.css",
+]
+
+[tool.setuptools.exclude-package-data]
+aptiordesk = [
+    "features/interviews/avatar/library/*.glb",
+    "features/interviews/avatar/library/*.jpg",
+    "features/interviews/avatar/library/ari-conditioned/*",
+    "features/interviews/avatar/library/ari-conditioned/**/*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --basetemp=.pytest-tmp"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+# Declared explicitly so import classification does not depend on what happens
+# to be present on disk — otherwise lint results differ between a working
+# checkout and a fresh clone.
+known-first-party = ["aptiordesk", "tests"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["src/aptiordesk"]
+check_untyped_defs = true
+ignore_missing_imports = true
+follow_imports = "skip"
+no_site_packages = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+disable_error_code = [
+    "arg-type",
+    "assignment",
+    "attr-defined",
+    "func-returns-value",
+    "method-assign",
+    "misc",
+    "union-attr",
+    "valid-type",
+    "var-annotated",
+]

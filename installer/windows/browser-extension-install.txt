@@ -1,0 +1,19 @@
+AptiorDesk companion extension setup
+====================================
+
+The companion browser extension is a separately distributed proprietary
+product. Its source code and unpacked development build are intentionally not
+included in the open-source AptiorDesk desktop repository or installer.
+
+1. Install the official companion from the Chrome Web Store when available.
+2. Launch AptiorDesk and open Settings > Browser extension.
+3. Open a public job page and launch the AptiorDesk side panel.
+4. Review the detected job and import it.
+5. Use Settings > System setup to verify the local connection.
+
+The companion connects automatically to AptiorDesk's loopback bridge. No
+pairing key, Python installation, terminal command, or Developer mode is
+required.
+
+The installer and desktop application use the centrally configured production
+Chrome extension identity. AptiorDesk rejects other extension origins.

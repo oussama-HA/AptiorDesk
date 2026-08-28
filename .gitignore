@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+/packaging/icons/
+.artifacts/
+.mypy_cache/
+
+# Secrets & personal data — never commit
+config.json
+speech-credentials.json
+*credentials*.json
+/*.docx
+/*.pdf
+.env
+.env.*
+!.env.example
+
+# Local data. NOTE: these are anchored with a leading slash on purpose.
+# An unanchored "models/" also matches src/aptiordesk/database/models/ and silently
+# excludes that source package from the repository.
+*.db
+*.db-wal
+*.db-shm
+*.sqlite3
+/models/*
+!/models/kokoro/
+/models/kokoro/*
+!/models/kokoro/kokoro-v1.0.int8.onnx
+!/models/kokoro/voices-v1.0.bin
+/exports/
+
+# Tooling
+.pytest_cache/
+.pytest-tmp/
+.ruff_cache/
+.coverage
+htmlcov/
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.claude/
+.agents/
+
+# The marketing website is published from its own repository.
+/website/
+
+# The browser extension is a separately distributed proprietary product.
+# The open-source desktop repository contains only its loopback import protocol.
+/src/aptiordesk/integrations/browser_extension/extension/
+/src/aptiordesk/integrations/browser_extension/*.zip
+/tests/browser_extension/
+/**/extension/manifest.json
+/**/*extension*.zip
+
+# The production interviewer is licensed stock media, not MIT source. Release
+# builds inject it from private storage; source checkouts show the safe fallback.
+/src/aptiordesk/features/interviews/avatar/library/*.glb
+/src/aptiordesk/features/interviews/avatar/library/*.jpg
+/src/aptiordesk/features/interviews/avatar/library/*-conditioned/

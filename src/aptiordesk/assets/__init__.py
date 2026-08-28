@@ -1,0 +1,1 @@
+"""Packaged AptiorDesk brand assets."""

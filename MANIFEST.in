@@ -1,0 +1,5 @@
+exclude src/aptiordesk/features/interviews/avatar/library/ari.glb
+exclude src/aptiordesk/features/interviews/avatar/library/ari.jpg
+recursive-exclude src/aptiordesk/features/interviews/avatar/library/ari-conditioned *
+recursive-exclude src/aptiordesk/integrations/browser_extension/extension *
+recursive-exclude tests/browser_extension *

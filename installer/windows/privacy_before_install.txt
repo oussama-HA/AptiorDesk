@@ -1,0 +1,17 @@
+AptiorDesk is a local-first job-hunting assistant.
+
+Your profile, resumes, captured jobs, interview answers, and application data
+are stored in your AptiorDesk user-data directory. The installer does not
+upload them and repair or upgrade installs preserve them.
+
+Kokoro text-to-speech runs locally. AptiorDesk does not silently fall back to
+the Windows system voice.
+
+Cloud AI providers receive content only when you configure and use them.
+Provider keys are stored in the Windows credential manager where available.
+
+The separately distributed proprietary companion extension connects only to
+AptiorDesk's loopback service and reads
+the active page only when you choose to capture it.
+
+See PRIVACY.md in the project repository for the complete privacy policy.
